@@ -1,0 +1,18 @@
+/* Copyright (C) 2017, Pavel Lee
+ All rights reserved. */
+
+ext.versions = [ANDROID_GRADLE   : "3.0.1",
+                KOTLIN           : "1.2.21",
+                COMPILE_SDK      : 26,
+                BUILD_TOOLS      : "26.0.2",
+                MIN_SDK          : 16,
+                TARGET_SDK       : 26,
+                SUPPORT          : "25.4.0",
+                RXANDROID        : "2.0.2",
+                MVI              : "3.1.0"]
+
+if (project.hasProperty("teamcity")) {
+  ext.buildNumber = teamcity["build.number"].toString().toInteger()
+} else {
+  ext.buildNumber = 0
+}

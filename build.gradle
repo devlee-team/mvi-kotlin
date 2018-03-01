@@ -1,0 +1,27 @@
+/* Copyright (C) 2017, Pavel Lee
+ All rights reserved. */
+
+buildscript {
+  apply from: project.file('constants.gradle')
+
+  repositories {
+    google()
+    jcenter()
+  }
+  dependencies {
+    classpath "com.android.tools.build:gradle:$versions.ANDROID_GRADLE"
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.KOTLIN"
+  }
+}
+
+allprojects {
+  repositories {
+    google()
+    jcenter()
+    maven { url 'https://maven.google.com' }
+  }
+}
+
+task clean(type: Delete) {
+  delete rootProject.buildDir
+}

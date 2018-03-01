@@ -1,0 +1,6 @@
+<!--
+  ~ Copyright (C) 2018, Pavel Lee
+  ~ All rights reserved.
+  -->
+
+<manifest package="org.devlee.kotlin.mvi" />

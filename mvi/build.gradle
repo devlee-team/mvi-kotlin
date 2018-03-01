@@ -1,0 +1,37 @@
+/*
+ * Copyright (C) 2018, Pavel Lee
+ * All rights reserved.
+ */
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+  compileSdkVersion versions.COMPILE_SDK
+  buildToolsVersion versions.BUILD_TOOLS
+
+  defaultConfig {
+    minSdkVersion versions.MIN_SDK
+    targetSdkVersion versions.TARGET_SDK
+
+    versionCode buildNumber
+    versionName "1.0"
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+}
+
+dependencies {
+  implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+  api "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$versions.KOTLIN"
+  api "com.android.support:appcompat-v7:$versions.SUPPORT"
+  api "com.hannesdorfmann.mosby3:mvi:$versions.MVI"
+
+  api "io.reactivex.rxjava2:rxandroid:$versions.RXANDROID"
+}
